@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+</head>
+<body>
+<form>
+    <img id="img1" onclick="DoiAnh1()" src="images/Xuan.jpg" width="300px" height="300px">
+    <img id="img2" onclick="DoiAnh2()" src="images/Meo.jpg" width="300px" height="300px"><br>
+    <img id="img3" onclick="DoiAnh3()" src="images/Bong-Ro.jpg" width="300px" height="300px">
+    <img id="img4" onclick="DoiAnh4()" src="images/Ca.jpg" width="300px" height="300px">
+</form>
+<script>
+    let image1 = ["images/Xuan.jpg","images/Cho.jpg","images/Bong-Da.jpg"];
+    let image2 = ["images/Ha.jpg","images/Meo.jpg","images/Bong-Tennis.jpg"];
+    let image3 = ["images/Thu.jpg","images/Chim.jpg","images/Bong-Ro.jpg"];
+    let image4 = ["images/Dong.jpg","images/Ca.jpg","images/Bong-Bau-Duc.jpg"];
+    let i=0, x=0, y=1, z=2, w=3;
+    let Anh1 = document.getElementById('img1');
+    let Anh2 = document.getElementById('img2');
+    let Anh3 = document.getElementById('img3');
+    let Anh4 = document.getElementById('img4');
+
+    function DoiAnh1() {
+        i++;
+        if(i>= image1.length)
+            i=0;
+        Anh1.src = image1[i];
+        x=i;
+        Check(x,y,z,w);
+    }
+    function DoiAnh2() {
+        i++;
+        if(i>= image2.length)
+            i=0;
+        Anh2.src = image2[i];
+        y=i;
+        Check(x,y,z,w);
+    }
+    function DoiAnh3() {
+        i++;
+        if(i>= image3.length)
+            i=0;
+        Anh3.src = image3[i];
+        z=i;
+        Check(x,y,z,w);
+    }
+    function DoiAnh4() {
+        i++;
+        if(i>= image4.length)
+            i=0;
+        Anh4.src = image4[i];
+        w=i;
+        Check(x,y,z,w);
+    }
+
+    function Check() {
+        if (x==y && y==z && z==w){
+            alert('You Win !');
+        }
+    }
+
+</script>
+</body>
+</html>
