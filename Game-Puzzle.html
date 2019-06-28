@@ -6,10 +6,10 @@
 </head>
 <body>
 <form>
-    <img id="img1" onclick="DoiAnh1()" src="images/Xuan.jpg" width="300px" height="300px">
-    <img id="img2" onclick="DoiAnh2()" src="images/Meo.jpg" width="300px" height="300px"><br>
-    <img id="img3" onclick="DoiAnh3()" src="images/Bong-Ro.jpg" width="300px" height="300px">
-    <img id="img4" onclick="DoiAnh4()" src="images/Ca.jpg" width="300px" height="300px">
+    <img id="img1" onclick="DoiAnh1()" src="images/Xuan.jpg" width="300px" height="300px" style="box-shadow: 2px 3px 3px black">
+    <img id="img2" onclick="DoiAnh2()" src="images/Meo.jpg" width="300px" height="300px" style="box-shadow: 2px 3px 3px black"><br>
+    <img id="img3" onclick="DoiAnh3()" src="images/Bong-Ro.jpg" width="300px" height="300px" style="box-shadow: 2px 3px 3px black">
+    <img id="img4" onclick="DoiAnh4()" src="images/Ca.jpg" width="300px" height="300px" style="box-shadow: 2px 3px 3px black">
 </form>
 <script>
     let image1 = ["images/Xuan.jpg","images/Cho.jpg","images/Bong-Da.jpg"];
@@ -56,8 +56,22 @@
     }
 
     function Check() {
-        if (x==y && y==z && z==w){
-            alert('You Win !');
+        let setColor = false;
+        if (x==y && y==z && z==w) {
+            setColor = true;
+        }
+        if (setColor){
+            document.getElementById("img1").style.boxShadow = "5px 5px 10px red";
+            document.getElementById("img2").style.boxShadow = "5px 5px 10px red";
+            document.getElementById("img3").style.boxShadow = "5px 5px 10px red";
+            document.getElementById("img4").style.boxShadow = "5px 5px 10px red";
+            // alert('You Win !');
+        }
+        else{
+            document.getElementById("img1").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img2").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img3").style.boxShadow = "2px 3px 3px black";
+            document.getElementById("img4").style.boxShadow = "2px 3px 3px black";
         }
     }
 
